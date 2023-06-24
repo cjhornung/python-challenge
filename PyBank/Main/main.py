@@ -35,3 +35,12 @@ str_greatest_decrease="Greatest Decrease in Profits: ($"+str(greatest_decrease)+
 output=[str_total_months,str_total,str_average_change,str_greatest_increase,str_greatest_decrease]
 for line in range(len(output)):
     print(output[line])
+
+output_file = os.path.join("..", "analysis","output.txt")
+with open(output_file, "w") as datafile:
+    
+        for line in range(len(output)):
+                datafile.write(output[line])
+                datafile.write('\n')
+
+
