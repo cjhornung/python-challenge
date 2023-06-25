@@ -11,27 +11,31 @@ ballot_id=[]
 county=[]
 candidate=[]
 candidate_unique=[]
+candidate_votes=[]
 total_votes=0
+
 # Open the CSV using the UTF-8 encoding
 with open(csvpath, encoding='UTF-8') as csvfile:
         csvreader = csv.reader(csvfile, delimiter=",")
-        #Skip Headers
-        next(csvreader, None)
+        #Store Headers
+        headers=next(csvreader)
         #Place CSV data into lists
         for row in csvreader:
             ballot_id.append(row[0])
             county.append(row[1])
             candidate.append(row[2])
-        for i in range(len(candidate))
+        candidate_unique.append(candidate[0])
+        for i in range(len(candidate)):
             total_votes=total_votes+1
-            
-
-str_total_months="Total Months: "+str(total_months)
-total_votes="Total: $"+str(total)
-str_average_change="Average Change: $"+str(average_change)
-str_greatest_increase="Greatest Increase in Profits: "+ greatest_increase_date[1] +"-" + greatest_increase_date[0] + " ($"+str(greatest_increase)+")"
-str_greatest_decrease="Greatest Decrease in Profits: "+greatest_decrease_date[1]+"-"+greatest_decrease_date[0]+" ($"+str(greatest_decrease)+")"
-output=[str_total_months,str_total,str_average_change,str_greatest_increase,str_greatest_decrease]
+            if candidate[i] in candidate_unique:
+                pass
+            else:
+                candidate_unique.append(candidate[i])
+print(candidate_unique)        
+title=("Election Results")
+linebreak=("-------------------------")
+str_total_votes="Total Votes: "+str(total_votes)
+output=[title,linebreak,str_total_votes,linebreak]
 for line in range(len(output)):
     print(output[line])
 #Txt File Outupt

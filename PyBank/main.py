@@ -19,8 +19,8 @@ profit_losses_list=[]
 # Open the CSV using the UTF-8 encoding
 with open(csvpath, encoding='UTF-8') as csvfile:
         csvreader = csv.reader(csvfile, delimiter=",")
-        #Skip Headers
-        next(csvreader, None)
+        #Store Headers
+        headers=next(csvreader)
         #Place CSV data into lists
         for row in csvreader:
                 date_list.append(row[0])
