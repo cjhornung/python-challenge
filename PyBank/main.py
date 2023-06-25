@@ -3,7 +3,7 @@ import os
 import csv
 
 # Set path for file
-csvpath = os.path.join("..", "Resources", "budget_data.csv")
+csvpath = os.path.join("Resources", "budget_data.csv")
 
 # Variable set up
 total_months=0
@@ -57,7 +57,7 @@ output=[str_total_months,str_total,str_average_change,str_greatest_increase,str_
 for line in range(len(output)):
     print(output[line])
 #Txt File Outupt
-output_file = os.path.join("..", "analysis","output.txt")
+output_file = os.path.join("analysis","output.txt")
 with open(output_file, "w") as datafile:
     
         for line in range(len(output)):
