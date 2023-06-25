@@ -42,15 +42,17 @@ with open(csvpath, encoding='UTF-8') as csvfile:
                 pastvalue=int(profit_losses_list[i])
         average_change=round(changetotal/(total_months-1),2)                     
 
-
+#Reformat Date Strings
+greatest_increase_date=greatest_increase_date.split("-")
+greatest_decrease_date=greatest_decrease_date.split("-")
 #Terminal Output
 print("Financial Analysis")
 print("----------------------------")
 str_total_months="Total Months: "+str(total_months)
 str_total="Total: $"+str(total)
 str_average_change="Average Change: $"+str(average_change)
-str_greatest_increase="Greatest Increase in Profits: "+greatest_increase_date+" ($"+str(greatest_increase)+")"
-str_greatest_decrease="Greatest Decrease in Profits: "+greatest_decrease_date+" ($"+str(greatest_decrease)+")"
+str_greatest_increase="Greatest Increase in Profits: "+ greatest_increase_date[1] +"-" + greatest_increase_date[0] + " ($"+str(greatest_increase)+")"
+str_greatest_decrease="Greatest Decrease in Profits: "+greatest_decrease_date[1]+"-"+greatest_decrease_date[0]+" ($"+str(greatest_decrease)+")"
 output=[str_total_months,str_total,str_average_change,str_greatest_increase,str_greatest_decrease]
 for line in range(len(output)):
     print(output[line])
