@@ -2,7 +2,7 @@
 import os
 import csv
 
-# Set path for file
+# Set path for file input
 csvpath = os.path.join("Resources", "budget_data.csv")
 
 # Variable set up
